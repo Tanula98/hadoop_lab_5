@@ -1,3 +1,5 @@
+import java.time.Duration;
+
 public class AkkaStreamsAppConstants {
 
     // Messages
@@ -16,4 +18,8 @@ public class AkkaStreamsAppConstants {
     static final String TEST_URL_KEY = "testUrl";
     static final String COUNT_KEY = "count";
 
+    // Other constants
+    static final Duration TIMEOUT = Duration.ofMillis(5000);
+    static final int PARALLELISM = 5;
+    static final long ONE_SECOND_IN_NANO_SECONDS = 1_000_000L;
 }
