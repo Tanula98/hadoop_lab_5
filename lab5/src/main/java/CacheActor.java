@@ -20,6 +20,8 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(ResultPing.class, req -> {
+                    String url = req.getUrl();
+                    Long result = req.getPing();
                     
                 })
                 .match()
