@@ -3,6 +3,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.model.Query;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Sink;
@@ -23,7 +24,9 @@ public class TestHttpPing {
         return Flow.of(HttpRequest.class)
                 //→ map в Pair<url сайта из query параметра, Integer количество запросов>
                 .map(req -> {
+                    Query requestQuery = req.getUri().query();
                     String url = requestQuery.getOrElse(AkkaStreamsAppConstants.TEST_URL_KEY, "");
+                    
 
                 })
                 //→ mapAsync,
