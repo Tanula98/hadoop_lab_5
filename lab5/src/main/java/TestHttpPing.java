@@ -62,7 +62,7 @@ public class TestHttpPing {
                     cacheActor.tell(res, ActorRef.noSender());
                     return HttpResponse.create()
                             .withEntity(res.getUrl() + " " + res.getPing());
-                })
+                });
     }
 
 
