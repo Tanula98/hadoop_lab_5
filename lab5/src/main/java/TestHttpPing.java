@@ -46,7 +46,11 @@ public class TestHttpPing {
                     Patterns.ask(cacheActor, new CacheActor.GetMessage(testPing.getUrl()), AkkaStreamsAppConstants.TIMEOUT)
                             .thenCompose(req ->{
                                 ResultPing res = (ResultPing) req;
-                                if (res)
+                                if (res.getPing() != null){
+
+                                } else {
+                                    
+                                }
                             })
                 })
                 //→ map в HttpResponse с результатом а также посылка результата в
