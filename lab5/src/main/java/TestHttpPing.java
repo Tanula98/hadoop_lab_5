@@ -32,6 +32,8 @@ public class TestHttpPing {
                 //Source.from(Collections.singletonList(r))
                 //.toMat(testSink, Keep.right()).run(materializer);
                 .mapAsync()
+                //→ map в HttpResponse с результатом а также посылка результата в
+                //кеширующий актор.
                 .map()
     }
 
