@@ -69,6 +69,8 @@ public class TestHttpPing {
     public Sink<TestPing, CompletionStage<Long>> createSink(AsyncHttpClient asyncHttpClient) {
         Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
 
+        //C помощью метода create создаем Flow
+        Flow.<Pair<String, Integer>>create()
 
     }
 
