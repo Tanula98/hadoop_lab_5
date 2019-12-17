@@ -77,7 +77,7 @@ public class TestHttpPing {
                 //метода thenCompose вычисляем время и возвращаем future с временем
                 //выполнения запроса
                 .mapAsync()
-                .toM
+                .toMat(fold, Keep.right() ) ;
 
     }
 
