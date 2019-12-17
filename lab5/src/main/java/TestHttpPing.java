@@ -7,6 +7,8 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import org.asynchttpclient.AsyncHttpClient;
 
+import java.util.concurrent.CompletionStage;
+
 public class TestHttpPing {
     ActorRef cacheActor;
 
@@ -16,10 +18,13 @@ public class TestHttpPing {
 
     public Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(AsyncHttpClient asyncHttpClient, ActorMaterializer materializer) {
 
-        
+
     }
 
 
+    public Sink<TestPing, CompletionStage<Long>> createSink(AsyncHttpClient asyncHttpClient) {
 
-}
+
+
+    }
 
