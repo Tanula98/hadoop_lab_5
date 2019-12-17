@@ -70,7 +70,7 @@ public class TestHttpPing {
         Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
 
         //C помощью метода create создаем Flow
-        Flow.<Pair<String, Integer>>create()
+        return  Flow.<Pair<String, Integer>>create()
 
     }
 
