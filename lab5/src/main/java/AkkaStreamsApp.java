@@ -26,6 +26,10 @@ public class AkkaStreamsApp {
         final ActorMaterializer materializer =
                 ActorMaterializer.create(system);
 
+        AsyncHttpClient asyncHttpClient = Dsl.asyncHttpClient();
+
+        TestHttpPing testHttpPing = new TestHttpPing(system);
+        
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = <вызов
         метода которому передаем Http, ActorSystem и ActorMaterializer>;
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
