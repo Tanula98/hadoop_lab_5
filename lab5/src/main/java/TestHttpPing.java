@@ -77,6 +77,7 @@ public class TestHttpPing {
                 //метода thenCompose вычисляем время и возвращаем future с временем
                 //выполнения запроса
                 .mapAsync(AkkaStreamsAppConstants.PARALLELISM, url -> {
+                    long startTime = System.nanoTime();
                     
                 })
                 //→ завершаем flow : .toMat(fold, Keep.right() ) ;
