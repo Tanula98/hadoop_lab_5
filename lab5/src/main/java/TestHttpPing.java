@@ -49,7 +49,7 @@ public class TestHttpPing {
                                 if (res.getPing() != null){
                                     return CompletableFuture.completedFuture(res);
                                 } else {
-                                    Source.from(Collections.singletonList(testPing))
+                                    return Source.from(Collections.singletonList(testPing))
                                 }
                             })
                 })
