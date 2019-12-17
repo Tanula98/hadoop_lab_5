@@ -35,23 +35,25 @@ public class TestHttpPing {
                     return new TestPing(url, count);
                 })
                 //→ mapAsync,
-                //С помощью Patterns.ask посылаем запрос в кеширующий актор — есть ли
-                //результат. Обрабатываем ответ с помощью метода thenCompose
-                //если результат уже посчитан, то возвращаем его как completedFuture
+
+
                 //если нет, то создаем на лету flow из данных запроса, выполняем его и
                 //возвращаем СompletionStage<Long> :
                 //Source.from(Collections.singletonList(r))
                 //.toMat(testSink, Keep.right()).run(materializer);
                 .mapAsync(AkkaStreamsAppConstants.PARALLELISM, testPing ->{
+            //С помощью Patterns.ask посылаем запрос в кеширующий актор —
                     Patterns.ask(cacheActor, new CacheActor.GetMessage(testPing.getUrl()), AkkaStreamsAppConstants.TIMEOUT)
+                            //есть ли результат. Обрабатываем ответ с помощью метода thenCompose
                             .thenCompose(req ->{
                                 ResultPing res = (ResultPing) req;
+                                //если результат уже посчитан, то возвращаем его как completedFuture
                                 if (res.getPing() != null){
                                     return CompletableFuture.completedFuture(res);
                                 } else {
                                     return Source.from(Collections.singletonList(testPing))
                                             .toMat(testSink, Keep.right())
-                                            ..run(materializer)
+                                            .run(materializer)
                                             .thenApply(time -> new ResultPing(testPing.getUrl(),
                                                     time/testPing.getCount()/AkkaStreamsAppConstants.ONE_SECOND_IN_NANO_SECONDS));
                                 }
