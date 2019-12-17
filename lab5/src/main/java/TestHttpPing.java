@@ -76,6 +76,7 @@ public class TestHttpPing {
                 //→ mapAsync — засекаем время, вызываем async http client и с помощью
                 //метода thenCompose вычисляем время и возвращаем future с временем
                 //выполнения запроса
+                .mapAsync()
                 .
 
     }
