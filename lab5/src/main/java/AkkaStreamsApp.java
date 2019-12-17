@@ -33,7 +33,7 @@ public class AkkaStreamsApp {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =  testHttpPing.createRouteFlow(asyncHttpClient, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost(AkkaStreamsAppConstants.HOST, AkkaStreamsAppConstants.PORT),
                 materializer
         );
         System.out.println(AkkaStreamsAppConstants.START_SERVER_MESSAGE);
