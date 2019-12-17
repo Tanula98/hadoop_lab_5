@@ -41,6 +41,7 @@ public class TestHttpPing {
                 //→ map в HttpResponse с результатом а также посылка результата в
                 //кеширующий актор.
                 .map( res -> {
+                    cacheActor.tell(res, ActorRef.noSender());
                     
                 })
     }
