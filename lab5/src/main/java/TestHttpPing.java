@@ -78,7 +78,8 @@ public class TestHttpPing {
                 //выполнения запроса
                 .mapAsync(AkkaStreamsAppConstants.PARALLELISM, url -> {
                     long startTime = System.nanoTime();
-                    
+                    return asyncHttpClient
+                            .
                 })
                 //→ завершаем flow : .toMat(fold, Keep.right() ) ;
                 .toMat(fold, Keep.right() ) ;
