@@ -26,7 +26,7 @@ public class CacheActor extends AbstractActor {
                 })
                 .match(CacheActor.GetMessage.class, msg -> {
                     String url = msg.getUrl();
-                    Long result = store.getPing();
+                    Long result = store.get();
 
                 })
                 .build();
