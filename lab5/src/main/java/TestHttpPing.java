@@ -18,12 +18,14 @@ public class TestHttpPing {
     }
 
     public Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(AsyncHttpClient asyncHttpClient, ActorMaterializer materializer) {
+        Sink<TestPing, CompletionStage<Long>> testSink = createSink(asyncHttpClient);
+
     }
 
 
     public Sink<TestPing, CompletionStage<Long>> createSink(AsyncHttpClient asyncHttpClient) {
         Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
-        
+
 
     }
 
