@@ -47,7 +47,7 @@ public class TestHttpPing {
                             .thenCompose(req ->{
                                 ResultPing res = (ResultPing) req;
                                 if (res.getPing() != null){
-                                    return completedFuture.
+                                    return CompletableFuture.completedFuture
                                 } else {
 
                                 }
