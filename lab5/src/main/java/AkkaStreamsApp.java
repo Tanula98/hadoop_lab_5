@@ -21,6 +21,7 @@ public class AkkaStreamsApp {
         System.out.println(AkkaStreamsAppConstants.START_MESSAGE);
         //а. Инициализация http сервера в akka
         ActorSystem system = ActorSystem.create("routes");
+
         final Http http = Http.get(system);
         final ActorMaterializer materializer =
                 ActorMaterializer.create(system);
