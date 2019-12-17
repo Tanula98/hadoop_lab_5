@@ -55,8 +55,7 @@ public class TestHttpPing {
                                             .thenApply(time -> new ResultPing(testPing.getUrl(),
                                                     time/testPing.getCount()/AkkaStreamsAppConstants.ONE_SECOND_IN_NANO_SECONDS));
                                 }
-                            });
-                })
+                            }))
                 //→ map в HttpResponse с результатом а также посылка результата в
                 //кеширующий актор.
                 .map( res -> {
