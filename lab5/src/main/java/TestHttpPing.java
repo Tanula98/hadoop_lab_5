@@ -72,7 +72,7 @@ public class TestHttpPing {
         //C помощью метода create создаем Flow
         return  Flow.<TestPing>create()
                 //→ mapConcat размножаем сообщения до нужного количества копий
-                .mapConcat()
+                .mapConcat(testPing -> Collections.nCopies(testPing.getCount(), testPing.getUrl()))
                 //→ mapAsync — засекаем время, вызываем async http client и с помощью
                 //метода thenCompose вычисляем время и возвращаем future с временем
                 //выполнения запроса
