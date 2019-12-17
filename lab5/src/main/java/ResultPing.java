@@ -8,4 +8,13 @@ public class ResultPing {
         this.url = url;
         this.ping = ping;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public Long getPing() {
+        return ping;
+    }
+    
 }
