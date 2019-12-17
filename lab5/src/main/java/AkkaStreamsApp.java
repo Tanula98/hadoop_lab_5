@@ -39,7 +39,9 @@ public class AkkaStreamsApp {
                 .thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> {
                     system.terminate();
-                    try
+                    try {
+
+                    } catch
 
                         }
                 );
