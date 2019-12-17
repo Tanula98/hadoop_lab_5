@@ -3,8 +3,10 @@ import java.io.IOException;
 public class AkkaStreamsApp {
 
     public static void main(String[] args) throws IOException {
-        
+
         System.out.println(AkkaStreamsAppConstants.START_MESSAGE);
+        //а. Инициализация http сервера в akka
+        
 
 
     }
