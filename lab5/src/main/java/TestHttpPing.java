@@ -79,7 +79,10 @@ public class TestHttpPing {
                 .mapAsync(AkkaStreamsAppConstants.PARALLELISM, url -> {
                     long startTime = System.nanoTime();
                     return asyncHttpClient
-                            .
+                            .prepareGet(url)
+                            .execute()
+                            .toCompletableFuture()
+                            .thenApply(response -> System.nanoTime() - startTime);
                 })
                 //→ завершаем flow : .toMat(fold, Keep.right() ) ;
                 .toMat(fold, Keep.right() ) ;
