@@ -42,7 +42,8 @@ public class TestHttpPing {
                 //кеширующий актор.
                 .map( res -> {
                     cacheActor.tell(res, ActorRef.noSender());
-                    
+                    return HttpResponse.create()
+                            .withEntity(res.getUrl() + " " + res.getPing());
                 })
     }
 
