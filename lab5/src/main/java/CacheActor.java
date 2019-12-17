@@ -14,6 +14,8 @@ public class CacheActor extends AbstractActor {
         return Props.create(CacheActor.class);
     }
 
+    //б. создаем в actorSystem — актор который принимает две команды — поиск
+    //уже готового результата тестирования и результат тестрования.
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
