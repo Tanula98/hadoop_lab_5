@@ -23,6 +23,14 @@ public class TestHttpPing {
         return Flow.of(HttpRequest.class)
                 //→ map в Pair<url сайта из query параметра, Integer количество запросов>
                 .map()
+                //→ mapAsync,
+                //С помощью Patterns.ask посылаем запрос в кеширующий актор — есть ли
+                //результат. Обрабатываем ответ с помощью метода thenCompose
+                //если результат уже посчитан, то возвращаем его как completedFuture
+                //если нет, то создаем на лету flow из данных запроса, выполняем его и
+                //возвращаем СompletionStage<Long> :
+                //Source.from(Collections.singletonList(r))
+                //.toMat(testSink, Keep.right()).run(materializer);
                 .mapAsync()
                 .map()
     }
