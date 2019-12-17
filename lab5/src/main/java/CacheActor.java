@@ -19,7 +19,9 @@ public class CacheActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(ResultPing.class -> req)
+                .match(ResultPing.class, req -> {
+                    
+                })
                 .match()
                 .build();
     }
