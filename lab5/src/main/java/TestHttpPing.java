@@ -21,6 +21,7 @@ public class TestHttpPing {
         Sink<TestPing, CompletionStage<Long>> testSink = createSink(asyncHttpClient);
 
         return Flow.of(HttpRequest.class)
+                //→ map в Pair<url сайта из query параметра, Integer количество запросов>
                 .map()
                 .mapAsync()
                 .map()
