@@ -71,7 +71,7 @@ public class TestHttpPing {
 
         //C помощью метода create создаем Flow
         return  Flow.<TestPing>create()
-                .map()
+                .mapConcat()
 
     }
 
