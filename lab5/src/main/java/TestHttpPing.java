@@ -35,7 +35,7 @@ public class TestHttpPing {
                     return new TestPing(url, count);
                 })
                 //→ mapAsync,
-                .mapAsync(AkkaStreamsAppConstants.PARALLELISM, testPing ->{
+                .mapAsync(AkkaStreamsAppConstants.PARALLELISM, testPing ->
             //С помощью Patterns.ask посылаем запрос в кеширующий актор —
                     Patterns.ask(cacheActor, new CacheActor.GetMessage(testPing.getUrl()), AkkaStreamsAppConstants.TIMEOUT)
                             //есть ли результат. Обрабатываем ответ с помощью метода thenCompose
