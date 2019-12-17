@@ -37,7 +37,10 @@ public class AkkaStreamsApp {
         System.in.read();
         binding
                 .thenCompose(ServerBinding::unbind)
-                .thenAccept(unbound -> system.terminate();
+                .thenAccept(unbound -> {
+                    system.terminate();
+
+                        }
                 );
         // and shutdown when done
 
