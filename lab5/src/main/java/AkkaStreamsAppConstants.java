@@ -12,4 +12,8 @@ public class AkkaStreamsAppConstants {
     static final String HOST = "localhost";
     static final int PORT = 8080;
 
+    // HTTP Request and Response constants
+    static final String TEST_URL_KEY = "testUrl";
+    static final String COUNT_KEY = "count";
+
 }
