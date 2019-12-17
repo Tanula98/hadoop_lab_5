@@ -40,7 +40,9 @@ public class TestHttpPing {
                 .mapAsync()
                 //→ map в HttpResponse с результатом а также посылка результата в
                 //кеширующий актор.
-                .map()
+                .map( res -> {
+                    
+                })
     }
 
 
