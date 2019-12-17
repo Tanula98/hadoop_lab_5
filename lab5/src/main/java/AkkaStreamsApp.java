@@ -42,7 +42,7 @@ public class AkkaStreamsApp {
                     try {
 
                     } catch(IOException e){
-                        
+                        e.
                     }
 
                         }
