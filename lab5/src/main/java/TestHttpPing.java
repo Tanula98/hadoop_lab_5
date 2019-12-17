@@ -20,6 +20,7 @@ public class TestHttpPing {
     public Flow<HttpRequest, HttpResponse, NotUsed> createRouteFlow(AsyncHttpClient asyncHttpClient, ActorMaterializer materializer) {
         Sink<TestPing, CompletionStage<Long>> testSink = createSink(asyncHttpClient);
 
+        return Flow.of(HttpRequest.class)
     }
 
 
