@@ -50,6 +50,8 @@ public class TestHttpPing {
                                     return CompletableFuture.completedFuture(res);
                                 } else {
                                     return Source.from(Collections.singletonList(testPing))
+                                            .toMat(testSink, Keep.right())
+                                            .
                                 }
                             })
                 })
