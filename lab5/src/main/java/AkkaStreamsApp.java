@@ -41,7 +41,7 @@ public class AkkaStreamsApp {
                     system.terminate();
                     try {
 
-                    } catch(I)
+                    } catch(IOE)
 
                         }
                 );
