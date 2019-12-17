@@ -22,6 +22,8 @@ public class TestHttpPing {
 
         return Flow.of(HttpRequest.class)
                 .map()
+                .mapAsync()
+                .map()
     }
 
 
