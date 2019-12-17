@@ -76,7 +76,9 @@ public class TestHttpPing {
                 //→ mapAsync — засекаем время, вызываем async http client и с помощью
                 //метода thenCompose вычисляем время и возвращаем future с временем
                 //выполнения запроса
-                .mapAsync()
+                .mapAsync(AkkaStreamsAppConstants.PARALLELISM, url -> {
+                    
+                })
                 //→ завершаем flow : .toMat(fold, Keep.right() ) ;
                 .toMat(fold, Keep.right() ) ;
         //в данном случае fold — это агрегатор который подсчитывает сумму всех
