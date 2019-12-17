@@ -25,7 +25,7 @@ public class AkkaStreamsApp {
         final Http http = Http.get(system);
         final ActorMaterializer materializer =
                 ActorMaterializer.create(system);
-        
+
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = <вызов
         метода которому передаем Http, ActorSystem и ActorMaterializer>;
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
@@ -33,8 +33,7 @@ public class AkkaStreamsApp {
                 ConnectHttp.toHost("localhost", 8080),
                 materializer
         );
-        System.out.println("Server online at http://localhost:8080/\nPress
-                RETURN to stop...");
+        System.out.println(AkkaStreamsAppConstants.START_SERVER_MESSAGE);
         System.in.read();
         binding
                 .thenCompose(ServerBinding::unbind)
