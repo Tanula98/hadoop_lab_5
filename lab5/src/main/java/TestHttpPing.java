@@ -71,6 +71,7 @@ public class TestHttpPing {
 
         //C помощью метода create создаем Flow
         return  Flow.<TestPing>create()
+                //→ mapConcat размножаем сообщения до нужного количества копий
                 .mapConcat()
 
     }
