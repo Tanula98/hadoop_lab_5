@@ -44,6 +44,7 @@ public class TestHttpPing {
                 //.toMat(testSink, Keep.right()).run(materializer);
                 .mapAsync(AkkaStreamsAppConstants.PARALLELISM, testPing ->{
                     Patterns.ask(cacheActor, new CacheActor.GetMessage(testPing.getUrl()), AkkaStreamsAppConstants.TIMEOUT)
+                            .thenCompose()
                 })
                 //→ map в HttpResponse с результатом а также посылка результата в
                 //кеширующий актор.
