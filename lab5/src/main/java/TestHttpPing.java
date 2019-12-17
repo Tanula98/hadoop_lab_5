@@ -27,7 +27,7 @@ public class TestHttpPing {
                     Query requestQuery = req.getUri().query();
                     String url = requestQuery.getOrElse(AkkaStreamsAppConstants.TEST_URL_KEY, "");
                     Integer count = Integer.parseInt(requestQuery.getOrElse(AkkaStreamsAppConstants.COUNT_KEY, "-1"));
-                    return
+                    return new TestPing(url, count);
                 })
                 //→ mapAsync,
                 //С помощью Patterns.ask посылаем запрос в кеширующий актор — есть ли
