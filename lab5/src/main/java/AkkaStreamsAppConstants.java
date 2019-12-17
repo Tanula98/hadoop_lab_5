@@ -7,4 +7,9 @@ public class AkkaStreamsAppConstants {
     // Actors Constants
     static final String ACTOR_SYSTEM_NAME = "routes";
     static final String CACHE_ACTOR_NAME = "cacheActor";
+
+    // Server Constants
+    static final String HOST = "localhost";
+    static final int PORT = 8080;
+
 }
