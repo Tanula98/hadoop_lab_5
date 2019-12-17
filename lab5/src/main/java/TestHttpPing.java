@@ -22,7 +22,9 @@ public class TestHttpPing {
 
 
     public Sink<TestPing, CompletionStage<Long>> createSink(AsyncHttpClient asyncHttpClient) {
+        Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
         
+
     }
 
 }
