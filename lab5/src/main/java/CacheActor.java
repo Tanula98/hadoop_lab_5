@@ -12,4 +12,17 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return null;
     }
+
+    static class GetMessage {
+        private final String url;
+
+        GetMessage(String url) {
+            this.url = url;
+        }
+
+        String getUrl() {
+            return url;
+        }
+    }
+
 }
