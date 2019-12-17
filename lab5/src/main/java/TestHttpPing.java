@@ -25,7 +25,6 @@ public class TestHttpPing {
                 .mapAsync()
                 .map()
     }
-    }
 
 
     public Sink<TestPing, CompletionStage<Long>> createSink(AsyncHttpClient asyncHttpClient) {
