@@ -21,6 +21,7 @@ public class TestHttpPing {
         Sink<TestPing, CompletionStage<Long>> testSink = createSink(asyncHttpClient);
 
         return Flow.of(HttpRequest.class)
+                .
     }
 
 
