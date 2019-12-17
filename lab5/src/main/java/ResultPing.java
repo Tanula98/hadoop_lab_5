@@ -16,5 +16,5 @@ public class ResultPing {
     public Long getPing() {
         return ping;
     }
-    
+
 }
