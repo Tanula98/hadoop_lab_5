@@ -49,7 +49,7 @@ public class TestHttpPing {
                                 if (res.getPing() != null){
 
                                 } else {
-                                    
+
                                 }
                             })
                 })
