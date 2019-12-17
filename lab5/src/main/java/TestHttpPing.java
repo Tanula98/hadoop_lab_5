@@ -79,6 +79,8 @@ public class TestHttpPing {
                 .mapAsync()
                 //→ завершаем flow : .toMat(fold, Keep.right() ) ;
                 .toMat(fold, Keep.right() ) ;
+        //в данном случае fold — это агрегатор который подсчитывает сумму всех
+        //времен созаем его с помощью Sink.fold
 
     }
 
