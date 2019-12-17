@@ -22,7 +22,10 @@ public class TestHttpPing {
 
         return Flow.of(HttpRequest.class)
                 //→ map в Pair<url сайта из query параметра, Integer количество запросов>
-                .map()
+                .map(req -> {
+                    String url = requestQuery.getOrElse(AkkaStreamsAppConstants.TEST_URL_KEY, "");
+
+                })
                 //→ mapAsync,
                 //С помощью Patterns.ask посылаем запрос в кеширующий актор — есть ли
                 //результат. Обрабатываем ответ с помощью метода thenCompose
