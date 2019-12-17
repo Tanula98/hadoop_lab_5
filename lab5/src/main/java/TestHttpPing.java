@@ -53,7 +53,7 @@ public class TestHttpPing {
                                             .toMat(testSink, Keep.right())
                                             ..run(materializer)
                                             .thenApply(time -> new ResultPing(testPing.getUrl(),
-                                                    time / testPing.getCount() / AkkaStreamsAppConstants.ONE_SECOND_IN_NANO_SECONDS));
+                                                    time/testPing.getCount()/AkkaStreamsAppConstants.ONE_SECOND_IN_NANO_SECONDS));
                                 }
                             })
                 })
