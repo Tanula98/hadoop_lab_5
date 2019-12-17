@@ -22,7 +22,7 @@ public class CacheActor extends AbstractActor {
                 .match(ResultPing.class, req -> {
                     String url = req.getUrl();
                     Long result = req.getPing();
-                    
+                    store.put()
                 })
                 .match()
                 .build();
